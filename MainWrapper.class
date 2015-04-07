@@ -1,0 +1,48 @@
+public class Wrapper {
+	
+	public final static Wrapper inst = new Wrapper();
+	
+	public Minecraft getMinecraft(){
+		return Minecraft.getMinecraft();
+	}
+	
+	public EntityPlayerSP getPlayer(){
+		return Minecraft.getMinecraft().thePlayer;
+	}
+	
+	public WorldClient getWorld(){
+		return Minecraft.getMinecraft().theWorld;
+	}
+	
+	public Block getBlock(int x, int y, int z) {
+		return Minecraft.getMinecraft().theWorld.getBlockState(new BlockPos(x, y, z)).getBlock();
+		} 
+	
+	public Block getBlockPos(BlockPos block) {
+		return Minecraft.getMinecraft().theWorld.getBlockState(block).getBlock();
+		} 
+	
+	public Enchantment sharpness()
+	{
+		return Enchantment.field_180314_l;
+	}
+	
+	public Enchantment smite()
+	{
+		return Enchantment.field_180315_m;
+	}
+	
+	public Enchantment bane()
+	{
+		return Enchantment.field_180312_n;
+	}
+	
+	public FontRenderer getFontRenderer(){
+			return GuiScreen.fontRendererObj;
+	}
+
+	public Logger log(){
+		return LogManager.getLogger();
+	}
+	
+}
